@@ -1,0 +1,101 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,400;0,600;0,700;1,100;1,400&display=swap');
+
+* {
+  margin: 0;
+  box-sizing: border-box;
+  padding: 0;
+}
+
+:root {
+  --main-font-color: #001f54;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  color: white;
+}
+
+main {
+  display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+    gap: 1em;
+  padding: 1em;
+}
+
+.book-statistics, .edit-profile {
+  background-color: #001f54;
+  border-radius: 5px;
+}
+
+button {
+  cursor: pointer;
+  background-color: white;
+  border: none;
+  border-radius: 3px;
+  padding: .4em;
+  font-family: 'Montserrat', sans-serif;
+  margin: 1em;
+}
+
+input {
+  border: none;
+  border-radius: 2px;
+  margin-left: .3em;
+  padding: .4em;
+  font-family: 'Montserrat', sans-serif;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+form p {
+  margin: .8em;
+}
+
+.edit-profile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+span {
+  color: #001f54;
+  font-size: 2rem;
+  background-color: white;
+  /* margin: 1em; */
+  padding: .5em;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+  border-radius: 4px;
+}
+
+.stats {
+  margin: 4em;
+  background-color: white;
+  color: #001f54;
+  padding: .4em;
+  border-radius: 4px;
+}
+
+h2 {
+  text-align: center;
+  margin-top: 2em;
+  font-weight: bold;
+  font-style: italic;
+}
+
+@media (max-width: 1430px) {
+  span {
+    font-size: 1rem;
+  }
+}
+
+.edit-title {
+  font-style: normal;
+  font-weight: normal;
+  margin-bottom: 1em;
+}

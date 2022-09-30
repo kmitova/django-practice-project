@@ -1,0 +1,85 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block styles %}{% static 'profile-details.css' %}{% endblock %}
+{% block content %}
+    <!-- EXTENDS BASE HTML BUT WITH HOME INSTEAD PROFILE ON MENU (CHANGE IN BASE HTML) -->
+{% include 'partials/nav.html' %}
+{#    {% block menu-item %}Home{% endblock %}#}
+    <!-- START MAIN SECTION -->
+    <main>
+      <!-- BOOKS STATISCTICS AND INFO -->
+      <div class="book-statistics">
+        <h2>Your reading statistics:</h2>
+        <div class="member-since-div stats">
+          <h3>You have been a member since <span>19/10/2020</span></h3>
+        </div>
+        <div class="read-books stats">
+          <h3>You have read <span>34</span> books.</h3>
+        </div>
+        <div class="reviews-stats-div stats">
+          <h3>You have reviewed <span>28</span> books.</h3>
+        </div>
+      </div>
+      <!-- END BOOKS STATISTICS AND INFO -->
+      <!-- Start Edit Profile Section -->
+      <div class="edit-profile">
+        <h2 class="edit-title">Edit Profile</h2>
+        <!-- Start Edit Profile From -->
+        <form action="">
+          <div class="label-input">
+            <label for="first name">First name: </label>
+            <input type="text" placeholder="First name" value="" />
+          </div>
+          <br />
+          <div class="label-input">
+            <label for="last name">Last name: </label>
+            <input type="text" placeholder="Last name" value="" />
+          </div>
+          <br />
+          <div class="label-input">
+            <label for="username">Username: </label>
+            <input type="text" placeholder="Username" value="" />
+          </div>
+          <br />
+          <div class="label-input">
+            <label for="email">Email: </label>
+            <input type="email" placeholder="Email" value="" />
+          </div>
+          <!-- <br />s
+          <div class="label-input">
+            <label for="image">Image: </label>
+            <input
+              type="text"
+              placeholder="Link to to profile picture"
+              value="https://i.natgeofe.com/n/de94c416-6d23-45f5-9708-e8d56289268e/naturepl_01132178.jpg?w=636&h=631"
+            />
+          </div>
+          <br /> -->
+
+          <!-- <div class="label-input">
+            <label for="image">Gender: </label>
+            <div class="list-choice">
+              <div class="list-choice-title">Gender</div>
+              <div class="list-choice-objects">
+                <label>
+                  <input type="radio" name="gender" /> <span>Male</span>
+                </label>
+                <label>
+                  <input type="radio" name="gender" /> <span>Female</span>
+                </label>
+                <label>
+                  <input type="radio" name="gender" /> <span>Do not show</span>
+                </label>
+              </div>
+            </div>
+          </div> -->
+
+          <!-- Edit Profile Button -->
+          <button class="edit-btn" type="submit">Save changes</button>
+        </form>
+        <!-- End Edit Profile Form -->
+      </div>
+      <!-- End Edit Profile Section -->
+    </main>
+    <!-- END MAIN SECTION -->
+{% endblock %}
