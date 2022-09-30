@@ -1,12 +1,37 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-<h1>
-    LOGIN PAGE
-</h1>
-</body>
-</html>
+{% extends 'base.html' %}
+{% load static %}
+{% block styles %}{% static 'login-register.css' %}{% endblock %}
+{% block content %}
+    <main>
+      <div class="login-register-div">
+        <div class="login-register-box">
+          <h1>Biblioteca.</h1>
+
+          <!-- Start Login Form-->
+          <form action="#">
+            <p>
+              <label for="id_username">Username:</label>
+              <input type="text" placeholder="" />
+            </p>
+            <p>
+              <label for="id_password">Password:</label>
+              <input type="password" placeholder="" />
+            </p>
+
+            <!-- Login Button-->
+            <button type="submit">Log in</button>
+          </form>
+          <!-- End Login Form -->
+        </div>
+        <div class="second-option">
+          <!-- Link to Register Page-->
+          <p>
+            Don't have account?
+            <a href={% url 'register user' %} class="register-or-login-link">Register</a>
+          </p>
+        </div>
+      </div>
+    </main>
+
+    <!-- LOGIN FORM END -->
+{% endblock %}

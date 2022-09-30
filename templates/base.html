@@ -7,47 +7,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Home</title>
-    <link rel="stylesheet" href="{% static 'style.css' %}" />
+    <link rel="stylesheet" href="{% block styles %}{% static 'style.css' %}{% endblock %}" />
   </head>
   <body>
-    <!-- HEADER START -->
-    <header>
-      <div class="logo-and-title">
-        <div class="logo">
-          <img
-            src="/static/images/logo.svg"
-            alt="logo books stack"
-            width="50"
-            height="50"
-            class="logo-img"
-          />
-        </div>
-        <h1>BIBLIOTECA.</h1>
-      </div>
-      <div class="menu-and-icons">
-        <img class="hamburger-icon" src="{% static '/images/hamburger-icon.png' %}"
-        alt="hamburger menu" width="40" height="40" />
-        <img
-          class="close-icon"
-          src="{% static '/images/close-icon.png' %}"
-          alt="close mobile menu"
-          width="40"
-          height="40"
-        />
-        <div class="menu">
-          <nav>
-            <li><a href="#" class="menu-item">Profile</a></li>
-            <li><a href="#" class="menu-item">Books</a></li>
-            <li><a href="#" class="menu-item">Store</a></li>
-          </nav>
-          <div class="actions">
-            <li><a href="#" class="logout-btn menu-item">Logout</a></li>
-          </div>
-        </div>
-      </div>
-    </header>
-    <!-- HEADER END -->
-
   {% block content %}
     {% endblock %}
 {# FOOTER START #}

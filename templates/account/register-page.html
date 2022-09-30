@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block styles %}{% static 'login-register.css' %}{% endblock %}
+{% block content %}
+<!-- START MAIN -->
+    <main>
+      <!-- Start Register Section -->
+      <div class="login-register-div">
+        <div class="login-register-box">
+          <h1>Biblioteca.</h1>
+
+          <!-- Start Register Form -->
+          <form action="">
+            <p><input type="text" placeholder="Username" /></p>
+            <p><input type="email" placeholder="Email" /></p>
+
+            <p><input type="password" placeholder="Password" /></p>
+
+            <p><input type="password" placeholder="Repeat Password" /></p>
+
+            <!-- Register Button -->
+            <button type="submit">Register</button>
+          </form>
+          <!-- End Register Form -->
+        </div>
+        <div class="second-option">
+          <!-- Link to Login Page -->
+          <p>
+            Already have an account?
+            <a href={% url 'login user' %} class="register-or-login-link">Log in</a>
+          </p>
+        </div>
+      </div>
+    </main>
+    <!-- END MAIN -->
+{% endblock %}

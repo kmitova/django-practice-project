@@ -1,0 +1,110 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,400;0,600;0,700;1,100;1,400&display=swap');
+
+* {
+  margin: 0;
+  box-sizing: border-box;
+  padding: 0;
+}
+:root {
+  --main-font-color: #001f54;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+}
+
+
+a {
+  color: white;
+  text-decoration: none;
+}
+
+body {
+  background-color: white;
+
+}
+
+h1 {
+  color: white;
+  margin-top: -1em;
+  margin-bottom: 1.4em;
+  font-weight: 100;
+  letter-spacing: .3em;
+  cursor: pointer;
+  text-transform: uppercase;
+}
+main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+.login-register-div {
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  /* border: 2px solid red; */
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  padding-bottom: 2em;
+  border-radius: 6px;
+}
+
+.login-register-box {
+  margin: 2em;
+  background-color: var(--main-font-color);
+  padding: 4em;
+  border-radius: 4px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+
+
+  /* display: flex;
+  flex-direction: column;
+  justify-content: center;
+    align-items: center;
+    border: 2px solid red; */
+}
+
+.second-option {
+  background-color: var(--main-font-color);
+  text-align: center;
+  height: 40px;
+  width: 400px;
+  border-radius: 3px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}
+
+.register-or-login-link {
+  font-weight: 600;
+}
+
+form {
+  display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+form p {
+  margin: .8em;
+}
+
+input {
+  border: none;
+  border-radius: 2px;
+  margin-left: .3em;
+  padding: .4em;
+  font-family: 'Montserrat', sans-serif;
+}
+
+button {
+  background-color: white;
+  border: none;
+  border-radius: 3px;
+  padding: .4em;
+  font-family: 'Montserrat', sans-serif;
+}
+
