@@ -1,10 +1,34 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-<h1>BOOKS PAGE</h1>
-</body>
-</html>
+{% extends 'base.html' %}
+{% load static %}
+{% block styles %}{% static 'show-books.css' %}{% endblock %}
+{% block content %}
+        <!-- extends base.html -->
+    <!-- includes nav.html -->
+    {% include 'partials/nav.html' %}
+    <h2>Books</h2>
+    <main class="main-books">
+
+      <div class="add-to-tbr-div">
+          <div class="search-div">
+              <input
+          type="text"
+          class="search-book"
+          placeholder="Search for a book..."
+        />
+        <button class="search-book-btn">Go</button>
+          </div>
+
+          <div class=".book-search-result result">
+              search result displays here
+          </div>
+
+      </div>
+      <div class="random-book">
+        <button class="random-btn">Find me a random book to read!</button>
+        <div class="random-book">
+          <div class="book-title result">Book shows here</div>
+          <button class="add-to-tbr-btn">Add to TBR</button>
+        </div>
+      </div>
+    </main>
+{% endblock %}

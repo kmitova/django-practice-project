@@ -1,0 +1,61 @@
+h1 {
+    color: black
+}
+h2 {
+    text-align: center;
+    background-color: white;
+    font-size: 2rem;
+}
+.main-books {
+    background-color:white;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+      gap: 1em;
+    height: 100vh;
+    margin-bottom: 5em;
+
+}
+
+.add-to-tbr-div, .random-book {
+    border: 2px solid #001f54;
+    border-radius: 10px;
+}
+
+.random-book {
+    display:flex;
+    flex-direction: column;
+    gap: 1em;
+    padding: 2em;
+
+}
+.search-div {
+    padding: 2em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: .7em;
+}
+.search-book {
+    background-color:white;
+    height: 40px;
+    width: 400px;
+    border: 2px solid #001f54;
+    border-radius: 5px;
+    padding: .3em;
+    font-family: 'Montserrat', sans-serif;
+
+}
+
+.result {
+    background-color: #f5f3f4;
+    padding: 1em;
+}
+
+button {
+    background-color: #001f54;
+    color: white;
+    border-radius: 3px;
+    padding: .4em;
+    font-family: 'Montserrat', sans-serif;
+    border: 2px solid #001f54;
+}
