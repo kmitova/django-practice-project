@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     'practice_django_project.common',
     'practice_django_project.account',
     'practice_django_project.books',
+    'practice_django_project.store',
 
 ]
 
