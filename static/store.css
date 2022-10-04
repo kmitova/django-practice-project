@@ -1,12 +1,16 @@
 main {
     background-color:white;
+    /*display: flex;*/
+    /*flex-direction: column;*/
+    /*align-items: center;*/
 }
 
 .products-section {
     display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-      gap: 1em;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.5em;
     margin-top: 1em;
+    padding-bottom: 3em;
 
 }
 
@@ -124,4 +128,13 @@ box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px, rgba(17, 17, 26, 0.1) 0px 8px 24
 .search-btn:hover {
     background-color: #001f54;
     color: white;
+}
+
+@media (max-width: 800px) {
+  .store-actions {
+      flex-direction: column;
+      gap: 1em;
+      align-items: center;
+      justify-content:center;
+  }
 }
