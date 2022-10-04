@@ -1,13 +1,25 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-STORE MAIN PAGE
-<ul>
-    <li><a href="{% url 'details book' 1 %}">Harry Potter and the Order of the Phoenix</a></li>
-</ul>
-</body>
-</html>
+{% extends 'base.html' %}
+
+{% load static %}
+{% block styles %}{% static 'store.css' %}{% endblock %}
+{% block content %}
+{% include 'partials/nav.html'%}
+    <main>
+<div class="store-actions">
+    <div class="search-bar"><input type="text"><button class="search-btn">Search</button></div>
+    <button class="cart-link">Go to your cart <img src="{% static 'images/store/cart-icon.png' %}" class="cart-img" alt=""></button>
+</div>
+    <div class="products-section">
+        <a href="{% url 'details book' 1 %}" class="product">
+             <div class="product-card">
+                 <img src="{% static 'images/store/hp1.jpeg' %}" alt="harry potter book image" class="book-img">
+            <h3 class="title">Harry Potter and the Philosopher's Stone</h3>
+            <p class="author">JK Rowling</p>
+                 <p class="price">$19.99</p>
+                 <button class="add-to-cart-btn">Add to Cart <img class="cart-img" src="{% static 'images/store/cart-icon.png' %}" alt=""></button>
+        </div>
+        </a>
+
+    </div>
+    </main>
+{% endblock %}

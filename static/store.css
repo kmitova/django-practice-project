@@ -1,0 +1,127 @@
+main {
+    background-color:white;
+}
+
+.products-section {
+    display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+      gap: 1em;
+    margin-top: 1em;
+
+}
+
+.product-card {
+    width: 20em;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content:center;
+    color: #001f54;
+    padding: 1em;
+    border-radius: 10px;
+    border: 3px solid #001f54;
+
+}
+
+.title {
+    text-align: center;
+    margin-bottom: .3em;
+}
+
+.author {
+    margin-bottom: .3em;
+}
+
+.price {
+    margin-bottom: .3em;
+}
+
+.book-img {
+    width: 150px;
+    margin-bottom: .7em;
+    border-radius: 5px;
+box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px, rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px;}
+
+.cart-img {
+
+    width: 30px;
+}
+
+.add-to-cart-btn {
+    background-color: white;
+    color: #001f54;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #001f54;
+    border-radius: 5px;
+    padding: .5em;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.add-to-cart-btn:hover {
+    color: #d81159;
+    border:2px solid #d81159;
+}
+
+.cart-link {
+    background-color: white;
+    color: #001f54;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #001f54;
+    border-radius: 5px;
+    padding: .5em;
+    font-family: 'Montserrat', sans-serif;
+    cursor: pointer;
+}
+
+.store-actions {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background-color: white;
+    /*width: 100vw;*/
+    /*height: 100%;*/
+    /*margin: -3em -3em 2em;*/
+    /*margin-right: -4em;*/
+   /* width: 100%;*/
+   /*width: 100vw;*/
+}
+
+.search-bar {
+    padding-left: 5em;
+    display: flex;
+    align-items: center;
+    justify-content:center;
+    gap: .4em;
+
+}
+
+.search-bar input {
+    width: 300px;
+    font-family: 'Montserrat', sans-serif;
+    height: 33px;
+    padding: 0 .4em;
+    border: 2px solid #001f54;
+    border-radius: 5px;
+}
+
+.search-btn {
+        background-color: white;
+    color: #001f54;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #001f54;
+    border-radius: 5px;
+    padding: .5em;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.search-btn:hover {
+    background-color: #001f54;
+    color: white;
+}
