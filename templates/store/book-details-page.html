@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+{% load static %}
+{% block styles %}{% static 'product-details.css' %}{% endblock %}
+{% block content %}
+{% include 'partials/nav.html'%}
+
+    {% include 'partials/store-top.html'%}
+{#<div class="store-actions">#}
+{#    <div class="search-bar"><input type="text"><button class="search-btn">Search</button></div>#}
+{#    <button class="cart-link">Go to your cart <img src="{% static 'images/store/cart-icon.png' %}" class="cart-img" alt=""></button>#}
+{#</div>#}
+    <div class="product">
+
+             <div class="product-left">
+                 <img src="{% static 'images/store/hp1.jpeg' %}" alt="harry potter book image" class="book-img">
+            </div>
+        <div class="product-middle">
+            <h3 class="title">Harry Potter and the Philosopher's Stone</h3>
+            <p class="author">JK Rowling</p>
+            <p class="description">Lorem ipsum dolor sit
+                amet, consectetur adipisicing elit. Accusamus
+                aliquid asperiores blanditiis, dolore eum
+                eveniet ex facilis illo incidunt ipsum iusto
+                molestiae nihil, nostrum odit pariatur
+                quaerat quasi quo sint tenetur totam, velit
+                veniam voluptas voluptate. Accusantium blanditiis,
+                hic illo incidunt itaque molestiae placeat
+                praesentium, provident quas saepe sequi tempore?
+                Lorem ipsum dolor sit amet, consectetur
+                adipisicing elit. Aut debitis, dolore explicabo
+                labore omnis placeat quidem reiciendis sed sunt
+                vitae!</p>
+        </div>
+        <div class="product-right">
+            <p class="pages">Pages: <span class="pages-num">187</span></p>
+            <p class="price">Price: $<span class="price-num">19.99</span></p>
+                 <button class="add-to-cart-btn">Add to Cart <img class="cart-img" src="{% static 'images/store/cart-icon.png' %}" alt=""></button>
+</div>
+        </div>
+
+{% endblock %}
