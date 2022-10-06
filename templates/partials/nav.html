@@ -11,7 +11,7 @@
             class="logo-img"
           />
         </div>
-        <h1>BIBLIOTECA.</h1>
+          <a href="{% url 'index' %}"><h1>BIBLIOTECA.</h1></a>
       </div>
       <div class="menu-and-icons">
         <img class="hamburger-icon" src="{% static '/images/hamburger-icon.png' %}"
@@ -25,7 +25,7 @@
         />
         <div class="menu">
           <nav>
-              <li><a href="{% url 'index' %}" class="menu-item">Home</a></li>
+{#              <li><a href="{% url 'index' %}" class="menu-item">Home</a></li>#}
             <li><a href="{% url 'details user' 1 %}" class="menu-item">Profile</a></li>
             <li><a href="{% url 'show books' %}" class="menu-item">Books</a></li>
             <li><a href="{% url 'store main page' %}" class="menu-item">Store</a></li>

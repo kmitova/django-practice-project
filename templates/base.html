@@ -16,12 +16,11 @@
     {% endblock %}
 {# FOOTER START #}
 <footer>
-      <li class="footer-item about"><a href="#">About Biblioteca.</a></li>
-      <li class="footer-item team"><a href="#">Team</a></li>
-      <li class="footer-item t-and-c"><a href="#">Terms and Conditions</a></li>
-      <li class="footer-item copyright"><a href="#">Copyright</a></li>
-     <li class="footer-item copyright"><a href="#">Delivery</a></li>
-     <li class="footer-item copyright"><a href="#">FAQ</a></li>
+      <li class="footer-item about"><a href="{% url 'about' %}">About Biblioteca.</a></li>
+      <li class="footer-item team"><a href="{% url 'team' %}">Team</a></li>
+      <li class="footer-item t-and-c"><a href="{% url 't-and-c' %}">Terms and Conditions</a></li>
+     <li class="footer-item copyright"><a href="{% url 'delivery' %}">Delivery</a></li>
+     <li class="footer-item copyright"><a href="{% url 'faq' %}">FAQ</a></li>
     </footer>
     <!-- FOOTER END -->
     <!-- JS SCRIPT -->
