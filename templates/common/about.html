@@ -1,7 +1,30 @@
 {% extends 'base.html' %}
 {% load static %}
-
+{% block styles %}{% static 'footer-pages.css' %}{% endblock %}
 {% block content %}
     {% include 'partials/nav.html'%}
-<h1>About page</h1>
+    <main>
+        <div class="about-section">
+    <h1>About Biblioteca.</h1>
+    <p>
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+        A accusamus asperiores blanditiis consectetur corporis cupiditate,
+        delectus deserunt eius error exercitationem explicabo facilis illum
+        ipsum nisi possimus quibusdam rerum sunt voluptatibus. A cum distinctio
+        eaque eius, eveniet expedita facere fuga harum hic, ipsum laboriosam
+        libero magnam maiores natus neque praesentium provident quas, quia quo
+        reiciendis repellendus similique sit tempora ut vel veritatis voluptate
+        voluptatibus. Dolore earum, eum explicabo libero qui tempore. Aliquam
+        commodi cum distinctio dolor dolores dolorum eligendi enim eos eum eveniet
+        impedit laboriosam laudantium molestiae, natus necessitatibus nemo neque
+        nesciunt numquam obcaecati odio officia pariatur perferendis praesentium
+        qui quia quibusdam quo repellat sint sunt temporibus tenetur vero vitae voluptatum?
+        Ab accusantium amet aspernatur aut cupiditate doloremque dolorum et eum expedita ipsa
+        laborum modi necessitatibus nihil officiis pariatur perspiciatis quae quas quasi, recusandae
+        reiciendis repellendus sapiente sint, temporibus ut voluptates?
+    </p>
+    </div>
+    </main>
+
+
 {% endblock %}

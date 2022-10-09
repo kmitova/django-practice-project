@@ -1,0 +1,15 @@
+main {
+    display: flex;
+    align-items: center;
+}
+
+.about-section {
+    width: 70rem;
+    background-color: white;
+    margin: auto;
+    padding: 2em;
+}
+
+h1 {
+    padding-bottom: 1em;
+}
