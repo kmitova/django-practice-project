@@ -1,7 +1,34 @@
 {% extends 'base.html' %}
 {% load static %}
-
+{% block styles %}{% static 'team.css' %}{% endblock %}
 {% block content %}
     {% include 'partials/nav.html'%}
-<h1>Team</h1>
+    <main>
+        <div class="main-section">
+    <h1 class="title-page">Team</h1>
+    <div class="container">
+        <img src="{% static 'images/books-team.jpeg' %}" alt="books stack" width="300">
+        <div class="text">
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+            Aut consequatur eligendi et hic libero omnis ratione
+            recusandae, suscipit veritatis voluptate? Adipisci
+            animi asperiores eius eos est harum inventore laborum,
+            libero molestiae officia praesentium provident ratione,
+            reiciendis, reprehenderit
+            sunt voluptatem voluptatum.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing
+                elit. Ab aliquam amet asperiores atque commodi dolor
+                doloremque ducimus eius est id, in ipsam labore,
+                laudantium maiores minus nesciunt nisi nostrum
+                obcaecati,
+                odit officiis reprehenderit sed v
+                eritatis voluptatum?</p>
+        </div>
+
+
+    </div>
+    </div>
+    </main>
+
+
 {% endblock %}

@@ -1,0 +1,21 @@
+/* TEAM */
+
+.container {
+    display: flex;
+    align-items: center;
+}
+
+.main-section {
+    width: 70rem;
+    background-color: white;
+    margin: auto;
+    padding: 2em;
+}
+
+.main-section h1 {
+    padding-bottom: 1em;
+}
+
+.container img {
+    margin-right: 1.5em;
+}
