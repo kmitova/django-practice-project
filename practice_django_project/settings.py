@@ -85,6 +85,7 @@ WSGI_APPLICATION = 'practice_django_project.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
+
 # DATABASE DISABLED FOR NOW
 # DATABASES = {
 #     'default': {
