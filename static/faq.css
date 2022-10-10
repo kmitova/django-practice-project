@@ -1,0 +1,8 @@
+.main-section {
+    background-color: white;
+    padding:1em;
+    display: flex;
+    flex-direction: column;
+    gap:.4em;
+    margin-bottom: 10vh;
+}
