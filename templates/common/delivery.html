@@ -1,7 +1,28 @@
 {% extends 'base.html' %}
 {% load static %}
-
+{% block styles %}{% static 'delivery.css' %}{% endblock %}
 {% block content %}
     {% include 'partials/nav.html'%}
-<h1>Delivery</h1>
+    <main>
+        <div class="main-section">
+    <h1 class="title-page">Delivery</h1>
+            <div class="container">
+               <h4>Lorem ipsum dolor sit amet, consectetur
+                   adipisicing elit. Officia, repellendus.</h4>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                    Deserunt dolor, et facilis harum id, numquam obcaecati
+                    odio placeat quam quasi, quia sequi totam voluptatum?
+                    Consectetur fuga
+                    iste necessitatibus officiis praesentium.</p>
+                <h4>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</h4>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                    Ab alias dolorem eos laborum obcaecati odit perferendis
+                    quaerat suscipit. Aspernatur beatae deleniti dicta
+                    libero? Cum ipsum suscipit vero?</p>
+            </div>
+    </div>
+
+    </main>
+
+
 {% endblock %}
