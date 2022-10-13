@@ -7,7 +7,20 @@
 {#    {% block menu-item %}Home{% endblock %}#}
     <!-- START MAIN SECTION -->
     <main>
-    <div class="reviews">Your reviews</div>
+    <div class="reviews-container">
+        <h3>Your reviews:</h3>
+        <div class="reviews">
+            {% for review in reviews %}
+                <div class="review-item">
+                {{ review.book.title }}
+                    {{ review.created_at }}
+                    {{ review.updated_at }}
+                    {{ review.rating }}
+                    {{ review.content }}
+                </div>
+            {% endfor %}
+        </div>
+    </div>
       <!-- BOOKS STATISCTICS AND INFO -->
       <div class="book-statistics">
         <h2>Your reading statistics:</h2>
