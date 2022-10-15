@@ -59,3 +59,7 @@ button {
     font-family: 'Montserrat', sans-serif;
     border: 2px solid #001f54;
 }
+
+.filter-result {
+    display: none;
+}

@@ -10,16 +10,29 @@
 
       <div class="add-to-tbr-div">
           <div class="search-div">
+              <form action="{% url 'show books' %}" method="GET">
               <input
           type="text"
           class="search-book"
-          placeholder="Search for a book..."
+          placeholder="Search for a book or an author..."
+          name="title_or_author"
         />
         <button class="search-book-btn">Go</button>
+                  </form>
           </div>
 
           <div class=".book-search-result result">
-              search result displays here
+              <ul class="filter-result">
+              {% if query_made %}
+                  {% if queryset|length_is:'0' %}
+                            <li>no results</li>
+                      {% else %}
+                  {% for result in queryset %}
+                      <li>{{ result.title }} by {{ result.author }}</li>
+                  {% endfor %}
+                      {% endif %}
+              {% endif %}
+              </ul>
           </div>
 
       </div>
