@@ -148,4 +148,4 @@ class Review(StrFromFieldsMixin, models.Model):
         return super().save(*args, **kwargs)
 
     class Meta:
-        ordering = ('id',)
+        ordering = ('-updated_at',)

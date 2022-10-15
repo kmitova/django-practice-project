@@ -15,7 +15,8 @@
                 <div class="review-item">
                 <h4>Review of  <i>{{ review.book.title }}</i></h4>
                     <p class="review-date">Created at: {{ review.created_at }} Last edited at: {{ review.updated_at }}</p>
-                    <p class="review-rating">Book rated : {{ review.rating }}
+                    <p class="review-rating">Book rated : <span class="review-rating-number">{{ review.rating }}</span>
+
                         {% if review.rating == '1' %}
                             star
                         {% else %}
@@ -24,7 +25,16 @@
                     <p class="review-content">{{ review.content }}</p>
                 </div>
             {% endfor %}
+
         </div>
+      <div class="pagination">
+                {% if reviews.has_previous %}
+                <a href="{% url 'details user' 1 %}?page={{ reviews.previous_page_number }}">Newer reviews</a>
+                {% endif %}
+                {% if reviews.has_next %}
+                <a href="{% url 'details user' 1 %}?page={{ reviews.next_page_number }}">Older reviews</a>
+                {% endif %}
+            </div>
     </div>
       <!-- BOOKS STATISCTICS AND INFO -->
       <div class="book-statistics">
