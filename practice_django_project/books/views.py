@@ -1,18 +1,39 @@
 from django.db.models import Q
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 
 from practice_django_project.books.models import Book
 
 
 def show_books(request):
+    # title_or_author_query = request.GET.get('title_or_author')
+    # queryset = Book.objects.all()
+    # query_made = False
+    #
+    # if title_or_author_query != '' and title_or_author_query is not None:
+    #     queryset = queryset.filter(Q(title__icontains=title_or_author_query) |
+    #                                Q(author__icontains=title_or_author_query))\
+    #                         .distinct()
+    #     query_made = True
+    #
+    # context = {
+    #     'queryset': queryset,
+    #     "query_made": query_made
+    # }
+    #
+    # print(queryset)
+
+    return render(request, 'books/show-books-page.html')
+
+
+def search_view(request):
     title_or_author_query = request.GET.get('title_or_author')
     queryset = Book.objects.all()
     query_made = False
 
     if title_or_author_query != '' and title_or_author_query is not None:
         queryset = queryset.filter(Q(title__icontains=title_or_author_query) |
-                                   Q(author__icontains=title_or_author_query))\
-                            .distinct()
+                                   Q(author__icontains=title_or_author_query)) \
+            .distinct()
         query_made = True
 
     context = {
@@ -20,5 +41,6 @@ def show_books(request):
         "query_made": query_made
     }
 
-    return render(request, 'books/show-books-page.html', context)
+    print(queryset)
 
+    return render(request, 'books/show-books-page.html', context)

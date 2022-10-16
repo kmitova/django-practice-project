@@ -10,7 +10,7 @@
 
       <div class="add-to-tbr-div">
           <div class="search-div">
-              <form action="{% url 'show books' %}" method="GET">
+              <form action="{% url 'search view' %}" method="GET">
               <input
           type="text"
           class="search-book"
@@ -22,11 +22,12 @@
           </div>
 
           <div class=".book-search-result result">
-              <ul class="filter-result">
+              <ul class="">
               {% if query_made %}
                   {% if queryset|length_is:'0' %}
                             <li>no results</li>
                       {% else %}
+
                   {% for result in queryset %}
                       <li>{{ result.title }} by {{ result.author }}</li>
                   {% endfor %}
