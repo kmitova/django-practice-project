@@ -35,3 +35,12 @@ def search_view(request):
     print(queryset)
 
     return render(request, 'books/search-books-page.html', context)
+
+
+def book_details(request, slug):
+    book = Book.objects.get(slug=slug)
+    context = {
+        "book": book
+
+    }
+    return render(request, 'books/book-details-page.html', context)

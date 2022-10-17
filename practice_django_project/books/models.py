@@ -27,6 +27,7 @@ class Book(StrFromFieldsMixin, models.Model):
     MAX_TITLE_LENGTH = 200
     MAX_AUTHOR_LENGTH = 100
     MAX_NUMBER_OF_PAGES = 10000
+    MAX_DESCRIPTION_LENGTH = 10000
 
     NOT_READ = 'NR'
     CURRENTLY_READING = 'CR'
@@ -65,6 +66,22 @@ class Book(StrFromFieldsMixin, models.Model):
         max_length=20,
         choices=BOOK_STATUS_CHOICES,
         default=NOT_READ
+    )
+
+    description = models.CharField(
+        max_length=MAX_DESCRIPTION_LENGTH,
+        null=True,
+        blank=True,
+    )
+
+    publication_year = models.DateField(
+        null=True,
+        blank=True
+    )
+
+    cover_image = models.URLField(
+        null=False,
+        blank=True,
     )
 
     slug = models.SlugField(
