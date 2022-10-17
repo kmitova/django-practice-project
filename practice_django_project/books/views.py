@@ -1,7 +1,8 @@
 from django.db.models import Q
-from django.shortcuts import render, redirect
+from django.shortcuts import render
 
 from practice_django_project.books.models import Book
+
 
 
 def show_books(request):
