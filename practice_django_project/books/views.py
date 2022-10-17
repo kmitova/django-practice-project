@@ -43,4 +43,4 @@ def search_view(request):
 
     print(queryset)
 
-    return render(request, 'books/show-books-page.html', context)
+    return render(request, 'books/search-books-page.html', context)
