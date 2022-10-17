@@ -7,11 +7,11 @@
     <h3>by</h3>
     <h3>{{ book.author }}</h3>
 
-    <img src="{{ book.cover_image }}">
+    <img src="{{ book.cover_image }}" width="300"/>
 
     <h4>Book details</h4>
-    <p>{{ book.publication_year }}</p>
-    <p>{{ book.pages }}</p>
-
+    <p>Published on: {{ book.publication_year }}</p>
+    <p>Pages: {{ book.pages }}</p>
+    <h5>Book description:</h5>
     <p>{{ book.description }}</p>
 {% endblock %}

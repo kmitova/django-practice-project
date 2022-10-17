@@ -19,7 +19,7 @@
               {% for book in current_books %}
             <!-- link to the book -->
             <li class="book-item">
-              <a href="{% url 'book details' book.slug %}">{{ book.title }}, {{ book.author }}</a>
+              {% include 'partials/book-item.html' %}
               <button class="finish-btn">Finish</button>
             </li>
               {% endfor %}
@@ -33,7 +33,7 @@
               {% for book in tbr_books %}
             <!-- link to the book -->
             <li class="book-item">
-              <a href="{% url 'book details' book.slug %}">{{ book.title }}, {{ book.author }}</a>
+              {% include 'partials/book-item.html' %}
               <button class="start-btn">Start</button>
             </li>
               {% endfor %}
@@ -48,8 +48,10 @@
               {% for book in finished_books %}
             <!-- link to the book -->
             <li class="book-item">
-              <a href="{% url 'book details' book.slug %}">{{ book.title }}, {{ book.author }}</a
-              ><button class="review-btn">Review</button>
+{#              <a href="{% url 'book details' book.slug %}">{{ book.title }}, {{ book.author }}</a#}
+{#              >#}
+                {% include 'partials/book-item.html' %}
+                <button class="review-btn">Review</button>
             </li>
 
               {% endfor %}

@@ -24,8 +24,12 @@
                             <li>no results</li>
                       {% else %}
 
-                  {% for result in queryset %}
-                      <li>{{ result.title }} by {{ result.author }}</li>
+                  {% for book in queryset %}
+                      <li>
+                       {% include 'partials/book-item.html' %}
+                      </li>
+
+
                   {% endfor %}
                       {% endif %}
               {% endif %}

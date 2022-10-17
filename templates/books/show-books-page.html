@@ -23,8 +23,12 @@
     <h3>Your TBR</h3>
     <ul>
         {% for book in tbr_books.all %}
+{#            <li>#}
+{#            {{ book.title }} by {{ book.author }}#}
+{#            </li>#}
             <li>
-            {{ book.title }} by {{ book.author }}
+                {% include 'partials/book-item.html' %}
+
             </li>
 
         {% endfor %}

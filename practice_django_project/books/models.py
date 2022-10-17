@@ -70,18 +70,18 @@ class Book(StrFromFieldsMixin, models.Model):
 
     description = models.CharField(
         max_length=MAX_DESCRIPTION_LENGTH,
-        null=True,
-        blank=True,
+        null=False,
+        blank=False
     )
 
     publication_year = models.DateField(
-        null=True,
-        blank=True
+        null=False,
+        blank=False
     )
 
     cover_image = models.URLField(
         null=False,
-        blank=True,
+        blank=False
     )
 
     slug = models.SlugField(
