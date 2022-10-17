@@ -1,8 +1,28 @@
 from django.shortcuts import render
 
+from practice_django_project.books.models import Book
+
 
 def index(request):
-    return render(request, 'common/index.html')
+    tbr_books = Book.objects.filter(
+        status='TR'
+    )[::-1][:5]
+
+    finished_books = Book.objects.filter(
+        status='FN'
+    )[::-1][:5]
+
+    current_books = Book.objects.filter(
+        status='CR'
+    )[::-1][:5]
+
+    context = {
+        'tbr_books': tbr_books,
+        'finished_books': finished_books,
+        'current_books': current_books
+
+    }
+    return render(request, 'common/index.html', context)
 
 
 def about(request):

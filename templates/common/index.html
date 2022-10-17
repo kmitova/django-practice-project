@@ -16,23 +16,13 @@
         <div class="current-books books-section">
           <h3>You are currently reading:</h3>
           <ul>
+              {% for book in current_books %}
             <!-- link to the book -->
             <li class="book-item">
-              <a href="#">Harry Potter and the Goblet of Fire</a>
+              <a href="#">{{ book.title }}, {{ book.author }}</a>
               <button class="finish-btn">Finish</button>
             </li>
-            <li class="book-item">
-              <a href="#">Stories of Your Life and Others</a>
-              <button class="finish-btn">Finish</button>
-            </li>
-            <li class="book-item">
-              <a href="#">Jane Eyre</a
-              ><button class="finish-btn">Finish</button>
-            </li>
-            <li class="book-item">
-              <a href="#">Project Hail Mary</a>
-              <button class="finish-btn">Finish</button>
-            </li>
+              {% endfor %}
           </ul>
         </div>
         <!-- CURRENT BOOKS END -->
@@ -40,22 +30,14 @@
         <div class="to-read-books books-section">
           <h3>You want to read:</h3>
           <ul>
+              {% for book in tbr_books %}
             <!-- link to the book -->
             <li class="book-item">
-              <a href="#">Harry Potter and the Goblet of Fire</a
-              ><button class="start-btn">Start</button>
+              <a href="#">{{ book.title }}, {{ book.author }}</a>
+              <button class="start-btn">Start</button>
             </li>
-            <li class="book-item">
-              <a href="#">Stories of Your Life and Others</a
-              ><button class="start-btn">Start</button>
-            </li>
-            <li class="book-item">
-              <a href="#">Jane Eyre</a><button class="start-btn">Start</button>
-            </li>
-            <li class="book-item">
-              <a href="#">Project Hail Mary</a
-              ><button class="start-btn">Start</button>
-            </li>
+              {% endfor %}
+
           </ul>
         </div>
         <!-- TO READ BOOKS END -->
@@ -63,23 +45,14 @@
         <div class="past-books books-section">
           <h3>You recently read:</h3>
           <ul>
+              {% for book in finished_books %}
             <!-- link to the book -->
             <li class="book-item">
-              <a href="#">Harry Potter and the Goblet of Fire</a
+              <a href="#">{{ book.title }}, {{ book.author }}</a
               ><button class="review-btn">Review</button>
             </li>
-            <li class="book-item">
-              <a href="#">Stories of Your Life and Others</a
-              ><button class="review-btn">Review</button>
-            </li>
-            <li class="book-item">
-              <a href="#">Jane Eyre</a
-              ><button class="review-btn">Review</button>
-            </li>
-            <li class="book-item">
-              <a href="#">Project Hail Mary</a
-              ><button class="review-btn">Review</button>
-            </li>
+
+              {% endfor %}
           </ul>
         </div>
         <!-- READ BOOKS END -->

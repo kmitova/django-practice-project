@@ -6,10 +6,7 @@
     <!-- includes nav.html -->
     {% include 'partials/nav.html' %}
     <h2>Books</h2>
-    <main class="main-books">
-
-      <div class="add-to-tbr-div">
-          <div class="search-div">
+    <div class="search-div">
               <form action="{% url 'search view' %}" method="GET">
               <input
           type="text"
@@ -21,22 +18,49 @@
                   </form>
           </div>
 
-          <div class=".book-search-result result">
-              <ul class="">
-              {% if query_made %}
-                  {% if queryset|length_is:'0' %}
-                            <li>no results</li>
-                      {% else %}
+    <main class="main-books">
+    <div class="tbr-container">
+    <h3>Your TBR</h3>
+    <ul>
+        {% for book in tbr_books.all %}
+            <li>
+            {{ book.title }} by {{ book.author }}
+            </li>
 
-                  {% for result in queryset %}
-                      <li>{{ result.title }} by {{ result.author }}</li>
-                  {% endfor %}
-                      {% endif %}
-              {% endif %}
-              </ul>
-          </div>
+        {% endfor %}
+    </ul>
 
-      </div>
+    </div>
+
+{#      <div class="add-to-tbr-div">#}
+{#          <div class="search-div">#}
+{#              <form action="{% url 'search view' %}" method="GET">#}
+{#              <input#}
+{#          type="text"#}
+{#          class="search-book"#}
+{#          placeholder="Search for a book or an author..."#}
+{#          name="title_or_author"#}
+{#        />#}
+{#        <button class="search-book-btn">Go</button>#}
+{#                  </form>#}
+{#          </div>#}
+
+{#          <div class=".book-search-result result">#}
+{#              <ul class="">#}
+{#              {% if query_made %}#}
+{#                  {% if queryset|length_is:'0' %}#}
+{#                            <li>no results</li>#}
+{#                      {% else %}#}
+{##}
+{#                  {% for result in queryset %}#}
+{#                      <li>{{ result.title }} by {{ result.author }}</li>#}
+{#                  {% endfor %}#}
+{#                      {% endif %}#}
+{#              {% endif %}#}
+{#              </ul>#}
+{#          </div>#}
+
+{#      </div>#}
       <div class="random-book">
         <button class="random-btn">Find me a random book to read!</button>
         <div class="random-book">
