@@ -23,13 +23,17 @@
                   {% if queryset|length_is:'0' %}
                             <li>no results</li>
                       {% else %}
-
                   {% for book in queryset %}
                       <li>
                        {% include 'partials/book-item.html' %}
+                      {% if book.status == "FN" %}
+                          review link here
+                          {% elif book.status == "TR"%}
+                          <a class="start-btn" href="{% url 'start book' book.pk %}">Start</a>
+                          {% elif book.status == "CR"%}
+                          <a class="finish-btn" href="{% url 'finish book' book.pk %}">Finish</a>
+                      {% endif %}
                       </li>
-
-
                   {% endfor %}
                       {% endif %}
               {% endif %}
