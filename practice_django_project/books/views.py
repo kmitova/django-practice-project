@@ -2,7 +2,25 @@ from django.db.models import Q
 from django.shortcuts import render
 
 from practice_django_project.books.models import Book
+from practice_django_project.core.utils import get_random_book_object
 
+
+def add_random_book_to_tbr(request, pk):
+    book = Book.objects.get(pk=pk)
+    book.status = 'TR'
+    book.save()
+    context = {
+        'random_book': book
+    }
+    return render(request, 'books/show-books-page.html', context)
+
+# TODO: move show random book to its own html page (like the search function)
+def show_random_book(request):
+    random_book = get_random_book_object()
+    context = {
+        'random_book': random_book
+    }
+    return render(request, 'books/show-books-page.html', context)
 
 
 def show_books(request):

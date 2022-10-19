@@ -3,7 +3,6 @@ from django.shortcuts import render
 from practice_django_project.books.models import Book
 
 
-
 def finish_book(request, pk):
     tbr_books = Book.objects.filter(
         status='TR'
