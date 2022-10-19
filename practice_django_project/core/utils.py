@@ -17,6 +17,12 @@ def get_pagination_of_reviews(request, items):
 
 def get_random_book_object():
     books = list(Book.objects.filter(status='NR'))
-    books = random.sample(books, 1)
-    return books[0]
-
+    # books = random.sample(books, 1)
+    print(len(books))
+    try:
+        book = random.choice(books)
+        print(book.pk)
+        # print(random_element)
+        return book
+    except IndexError:
+        print('The sequence is empty')

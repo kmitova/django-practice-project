@@ -66,15 +66,15 @@
 {#          </div>#}
 
 {#      </div>#}
-      <div class="random-book">
+{#      <div class="random-book">#}
           <a href="{% url 'show random book' %}"><button class="random-btn">Find me a random book to read! </button></a>
-
-        <div class="random-book">
-          <div class="book-title result">{{ random_book.title }} {{ random_book.pk }}
+{##}
+{#        <div class="random-book">#}
+{#          <div class="book-title result">{{ random_book.title }} {{ random_book.pk }}#}
 {#              <a href="{% url 'add random book to tbr' random_book.pk %}"><button class="add-to-tbr-btn">Add to TBR</button></a>#}
-              </div>
-
-        </div>
-      </div>
+{#              </div>#}
+{##}
+{#        </div>#}
+{#      </div>#}
     </main>
 {% endblock %}

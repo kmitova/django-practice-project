@@ -1,5 +1,5 @@
 from django.db.models import Q
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 
 from practice_django_project.books.models import Book
 from practice_django_project.core.utils import get_random_book_object
@@ -9,18 +9,18 @@ def add_random_book_to_tbr(request, pk):
     book = Book.objects.get(pk=pk)
     book.status = 'TR'
     book.save()
-    context = {
-        'random_book': book
-    }
-    return render(request, 'books/show-books-page.html', context)
+    # context = {
+    #     'random_book': book
+    # }
+    # return render(request, 'books/show-books-page.html', context)
+    return render(request, 'books/random-book-page.html')
 
-# TODO: move show random book to its own html page (like the search function)
 def show_random_book(request):
     random_book = get_random_book_object()
     context = {
-        'random_book': random_book
+        'book': random_book
     }
-    return render(request, 'books/show-books-page.html', context)
+    return render(request, 'books/random-book-page.html', context)
 
 
 def show_books(request):
@@ -55,6 +55,8 @@ def search_view(request):
 
     return render(request, 'books/search-books-page.html', context)
 
+# TODO: style details page, add to read or review btn
+#  (to read if not read, review if finished, complete if started, start if tbr'd)
 
 def book_details(request, slug):
     book = Book.objects.get(slug=slug)
