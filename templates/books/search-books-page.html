@@ -27,11 +27,14 @@
                       <li>
                        {% include 'partials/book-item.html' %}
                       {% if book.status == "FN" %}
+                          <a class="start-btn" href="">Review</a>
                           review link here
                           {% elif book.status == "TR"%}
                           <a class="start-btn" href="{% url 'start book' book.pk %}">Start</a>
                           {% elif book.status == "CR"%}
                           <a class="finish-btn" href="{% url 'finish book' book.pk %}">Finish</a>
+                          {% elif book.status == "NR"%}
+                          <a class="finish-btn" href="{% url 'add book to tbr' book.pk %}">Add to TBR</a>
                       {% endif %}
                       </li>
                   {% endfor %}

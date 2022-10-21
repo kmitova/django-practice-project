@@ -5,7 +5,7 @@ from practice_django_project.books.models import Book
 from practice_django_project.core.utils import get_random_book_object
 
 
-def add_random_book_to_tbr(request, pk):
+def add_book_to_tbr(request, pk):
     book = Book.objects.get(pk=pk)
     book.status = 'TR'
     book.save()
@@ -13,7 +13,7 @@ def add_random_book_to_tbr(request, pk):
     #     'random_book': book
     # }
     # return render(request, 'books/show-books-page.html', context)
-    return render(request, 'books/random-book-page.html')
+    return render(request, 'common/index.html')
 
 def show_random_book(request):
     random_book = get_random_book_object()

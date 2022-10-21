@@ -35,7 +35,7 @@ def start_book(request, pk):
 
     finished_books = Book.objects.filter(
         status='FN'
-    )[::-1][:5]
+    ).order_by('-status')[:5]
 
     current_books = Book.objects.filter(
         status='CR'
