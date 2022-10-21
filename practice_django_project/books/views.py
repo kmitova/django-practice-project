@@ -65,3 +65,11 @@ def book_details(request, slug):
 
     }
     return render(request, 'books/book-details-page.html', context)
+
+
+def book_review(request, pk):
+    book = Book.objects.filter(pk=pk).get()
+    context = {
+        'book': book
+    }
+    return render(request, 'books/review-book-page.html', context)

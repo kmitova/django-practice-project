@@ -27,8 +27,8 @@
                       <li>
                        {% include 'partials/book-item.html' %}
                       {% if book.status == "FN" %}
-                          <a class="start-btn" href="">Review</a>
-                          review link here
+                          <a class="start-btn" href="{% url 'book review' book.pk %}">Review</a>
+
                           {% elif book.status == "TR"%}
                           <a class="start-btn" href="{% url 'start book' book.pk %}">Start</a>
                           {% elif book.status == "CR"%}
