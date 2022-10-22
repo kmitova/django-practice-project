@@ -5,7 +5,11 @@
     {% include 'partials/nav.html' %}
 {#    <h2>Books</h2>#}
 <div class="review-container">
-    <form amethod="post" action="#" >
+    <h3>Review Book</h3>
+    <form method="post" action="{% url 'book review' slug=slug %}" >
+        {{ form.as_p }}
+        {% csrf_token %}
+        <button type="submit">Submit</button>
 
     </form>
 </div>

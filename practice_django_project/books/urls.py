@@ -9,6 +9,6 @@ urlpatterns = (
     path('<slug:slug>/', book_details, name='book details'),
     path('random-book', show_random_book, name='show random book'),
     path('add-book-to-tbr/<int:pk>/', add_book_to_tbr, name='add book to tbr'),
-    path('book-review/<int:pk>/', book_review, name='book review')
+    path('book-review/<slug:slug>/', book_review, name='book review')
 
 )

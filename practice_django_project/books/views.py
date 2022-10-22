@@ -1,7 +1,8 @@
 from django.db.models import Q
 from django.shortcuts import render, redirect
 
-from practice_django_project.books.models import Book
+from practice_django_project.books.forms import BookReviewForm
+from practice_django_project.books.models import Book, Review
 from practice_django_project.core.utils import get_random_book_object
 
 
@@ -67,9 +68,46 @@ def book_details(request, slug):
     return render(request, 'books/book-details-page.html', context)
 
 
-def book_review(request, pk):
-    book = Book.objects.filter(pk=pk).get()
+def book_review(request, slug):
+    # book = Book.objects.filter(slug=book_slug).get()
+    Book.objects.filter()
+    review = Review.objects.filter(book__slug=slug).get()
+    print(f'Review: {review}')
+
+    # review = book.review_set.filter()
+    # print(review.content)
+    if request.method == "GET":
+        form = BookReviewForm()
+    else:
+        form = BookReviewForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('index')
+
     context = {
-        'book': book
+        'form': form,
+        # 'book': book,
+        # 'username': username,
+        'slug': slug
     }
     return render(request, 'books/review-book-page.html', context)
+
+'''
+pet = Pet.objects.filter(slug=pet_slug).get()
+    if request.method == "GET":
+        form = PetDeleteForm(instance=pet)
+    else:
+        form = PetDeleteForm(request.POST, instance=pet)
+        if form.is_valid():
+            form.save()
+            return redirect('details user', pk=1)
+
+    context = {
+        'form': form,
+        'pet_slug': pet_slug,
+        'username': username,
+    }
+
+    return render(request, 'pets/pet-delete-page.html', context)
+
+'''
