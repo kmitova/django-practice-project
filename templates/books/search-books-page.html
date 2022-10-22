@@ -27,7 +27,11 @@
                       <li>
                        {% include 'partials/book-item.html' %}
                       {% if book.status == "FN" %}
-                          <a class="start-btn" href="{% url 'book review' slug=book.slug %}">Review</a>
+                          {% if review %}
+                    <a class="review-btn" href="{% url 'book review edit' slug=book.slug %}">Review</a>
+                {% else %}
+                    <a class="review-btn" href="{% url 'book review create' slug=book.slug %}">Review</a>
+                {% endif %}
 
                           {% elif book.status == "TR"%}
                           <a class="start-btn" href="{% url 'start book' book.pk %}">Start</a>

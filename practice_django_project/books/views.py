@@ -1,7 +1,7 @@
 from django.db.models import Q
 from django.shortcuts import render, redirect
 
-from practice_django_project.books.forms import BookReviewForm
+from practice_django_project.books.forms import BookReviewCreateForm, BookReviewEditForm
 from practice_django_project.books.models import Book, Review
 from practice_django_project.core.utils import get_random_book_object
 
@@ -68,47 +68,40 @@ def book_details(request, slug):
     return render(request, 'books/book-details-page.html', context)
 
 
-def book_review(request, slug):
-    # book = Book.objects.filter(slug=book_slug).get()
-    Book.objects.filter()
-    review = Review.objects.filter(book__slug=slug).get()
-    print(f'Review: {review}')
+def book_review_create(request, slug):
+    book = Book.objects.filter(slug=slug).get()
 
-    # review = book.review_set.filter()
-    # print(review.content)
     if request.method == "GET":
-        form = BookReviewForm(initial={"book": review.book, 'content': review.content}, instance=review)
+        form = BookReviewCreateForm(initial={"book": book})
+
     else:
-        form = BookReviewForm(request.POST, initial={"book": review.book, 'content': review.content}, instance=review)
+        form = BookReviewCreateForm(request.POST, initial={"book": book})
         if form.is_valid():
             form.save()
             return redirect('index')
 
     context = {
         'form': form,
-        # 'book': book,
-        # 'username': username,
         'slug': slug,
-        'review': review
     }
     return render(request, 'books/review-book-page.html', context)
 
-'''
-pet = Pet.objects.filter(slug=pet_slug).get()
+
+def book_review_edit(request, slug):
+    review = Review.objects.filter(book__slug=slug).get()
+
     if request.method == "GET":
-        form = PetDeleteForm(instance=pet)
+        form = BookReviewEditForm(initial={"book": review.book, 'content': review.content}, instance=review)
     else:
-        form = PetDeleteForm(request.POST, instance=pet)
+        form = BookReviewEditForm(request.POST, initial={"book": review.book, 'content': review.content}, instance=review)
         if form.is_valid():
             form.save()
-            return redirect('details user', pk=1)
+            return redirect('index')
 
     context = {
         'form': form,
-        'pet_slug': pet_slug,
-        'username': username,
+        'slug': slug,
+        'review': review,
     }
+    return render(request, 'books/review-book-page.html', context)
 
-    return render(request, 'pets/pet-delete-page.html', context)
-
-'''

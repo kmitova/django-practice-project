@@ -3,7 +3,7 @@ from django import forms
 from practice_django_project.books.models import Review
 
 
-class BookReviewForm(forms.ModelForm):
+class BookReviewCreateForm(forms.ModelForm):
     class Meta:
         model = Review
         fields = ('book', 'rating', 'content',)
@@ -14,3 +14,13 @@ class BookReviewForm(forms.ModelForm):
         #         }
         #     ),}
 
+class BookReviewEditForm(forms.ModelForm):
+    class Meta:
+        model = Review
+        fields = ('book', 'rating', 'content',)
+        # widgets = {
+        #     'book': forms.TextInput(
+        #         attrs={
+        #             'readonly': 'readonly',
+        #         }
+        #     ),}
