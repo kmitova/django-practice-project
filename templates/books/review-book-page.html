@@ -5,7 +5,7 @@
     {% include 'partials/nav.html' %}
 {#    <h2>Books</h2>#}
 <div class="review-container">
-    <h3>Review Book</h3>
+    <h3>Review of {{ review.book.title }} by {{ review.book.author }}</h3>
     <form method="post" action="{% url 'book review' slug=slug %}" >
         {{ form.as_p }}
         {% csrf_token %}

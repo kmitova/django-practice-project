@@ -77,9 +77,9 @@ def book_review(request, slug):
     # review = book.review_set.filter()
     # print(review.content)
     if request.method == "GET":
-        form = BookReviewForm()
+        form = BookReviewForm(initial={"book": review.book, 'content': review.content}, instance=review)
     else:
-        form = BookReviewForm(request.POST)
+        form = BookReviewForm(request.POST, initial={"book": review.book, 'content': review.content}, instance=review)
         if form.is_valid():
             form.save()
             return redirect('index')
@@ -88,7 +88,8 @@ def book_review(request, slug):
         'form': form,
         # 'book': book,
         # 'username': username,
-        'slug': slug
+        'slug': slug,
+        'review': review
     }
     return render(request, 'books/review-book-page.html', context)
 

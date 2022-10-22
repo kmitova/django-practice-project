@@ -7,4 +7,10 @@ class BookReviewForm(forms.ModelForm):
     class Meta:
         model = Review
         fields = ('book', 'rating', 'content',)
+        # widgets = {
+        #     'book': forms.TextInput(
+        #         attrs={
+        #             'readonly': 'readonly',
+        #         }
+        #     ),}
 
