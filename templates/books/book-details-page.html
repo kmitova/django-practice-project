@@ -1,17 +1,49 @@
 {% extends 'base.html' %}
 {% load static %}
-{% block styles %}{% static 'show-books.css' %}{% endblock %}
+{% block styles %}{% static 'book-details.css' %}{% endblock %}
 {% block content %}
     {% include 'partials/nav.html' %}
-<h2>{{ book.title }}</h2>
+    <main>
+
+
+    <div class="title-container">
+
+    <h2>{{ book.title }}</h2>
     <h3>by</h3>
     <h3>{{ book.author }}</h3>
 
-    <img src="{{ book.cover_image }}" width="300"/>
+    </div>
 
-    <h4>Book details</h4>
-    <p>Published on: {{ book.publication_year }}</p>
-    <p>Pages: {{ book.pages }}</p>
-    <h5>Book description:</h5>
-    <p>{{ book.description }}</p>
+    <div class="book-details-container">
+        <div class="details-left">
+            <img src="{{ book.cover_image }}" width="300" class="cover-img"/>
+
+        </div>
+        <div class="details-right">
+            <div class="book-status">
+        {% if book.status == 'CR' %}
+                <a class="finish-btn btn" href="{% url 'finish book' book.pk %}">Finish</a>
+            {% elif book.status == 'TR'%}
+                <a class="start-btn btn" href="{% url 'start book' book.pk %}">Start</a>
+            {% elif book.status == 'FN'%}
+{#                {% if book.review_set.instance == None %}#}
+{#                    <a class="review-btn btn" href="{% url 'book review edit' slug=book.slug %}">Review</a>#}
+{#                {% else %}#}
+                    <a class="review-btn btn" href="{% url 'book review create' slug=book.slug %}">Review</a>
+{#                {% endif %}#}
+        {% endif %}
+    </div>
+        <div class="book-details">
+            <h4>Book details</h4>
+            <p>Published on: {{ book.publication_year }}</p>
+            <p>Pages: {{ book.pages }}</p>
+            <h5>Book description:</h5>
+            <p>{{ book.description }}</p>
+        </div>
+
+        </div>
+    </div>
+
+    </main>
+
 {% endblock %}

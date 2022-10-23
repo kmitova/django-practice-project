@@ -8,7 +8,17 @@ class BaseReviewForm(forms.ModelForm):
         model = Review
         fields = ('book', 'rating', 'content',)
         widgets = {
-            'book': forms.HiddenInput()
+            'book': forms.HiddenInput(),
+            'content': forms.Textarea(
+                attrs={
+                    'cols': 40,
+                    'rows': 10,
+                    'placeholder': 'Add review...',
+                }
+            )
+        }
+        labels = {
+            'content': ''
         }
 
 

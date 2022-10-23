@@ -26,3 +26,7 @@ def get_random_book_object():
         return book
     except IndexError:
         print('The sequence is empty')
+
+
+def get_books_by_status(status):
+    return Book.objects.filter(status=status)

@@ -16,6 +16,7 @@ def add_book_to_tbr(request, pk):
     # return render(request, 'books/show-books-page.html', context)
     return render(request, 'common/index.html')
 
+
 def show_random_book(request):
     random_book = get_random_book_object()
     context = {
@@ -56,9 +57,6 @@ def search_view(request):
 
     return render(request, 'books/search-books-page.html', context)
 
-# TODO: style details page, add to read or review btn
-#  (to read if not read, review if finished, complete if started, start if tbr'd)
-
 
 def book_details(request, slug):
     book = Book.objects.get(slug=slug)
@@ -71,41 +69,68 @@ def book_details(request, slug):
 
 def book_review_create(request, slug):
     book = Book.objects.filter(slug=slug).get()
+    review = Review.objects.filter(book__slug=slug).first()
+    if not review:
+        print('has review')
 
-    if request.method == "GET":
-        form = BookReviewCreateForm(initial={"book": book})
+        if request.method == "GET":
+            form = BookReviewCreateForm(initial={"book": book})
 
+        else:
+            form = BookReviewCreateForm(request.POST, initial={"book": book})
+            if form.is_valid():
+                form.save()
+                return redirect('index')
+        has_review = False
+        context = {
+            'form': form,
+            'slug': slug,
+            'book': book,
+            'has_review': has_review
+        }
     else:
-        form = BookReviewCreateForm(request.POST, initial={"book": book})
-        if form.is_valid():
-            form.save()
-            return redirect('index')
+        if request.method == "GET":
+            form = BookReviewEditForm(initial={"book": review.book, 'content': review.content}, instance=review)
+        else:
+            form = BookReviewEditForm(request.POST, initial={"book": review.book, 'content': review.content},
+                                      instance=review)
+            if form.is_valid():
+                form.save()
+                return redirect('index')
+        has_review = True
+        context = {
+            'form': form,
+            'slug': slug,
+            'review': review,
+            'book': book,
+            'has_review': has_review
+        }
 
-    context = {
-        'form': form,
-        'slug': slug,
-        'book': book,
-    }
+    print(has_review)
     return render(request, 'books/review-book-page.html', context)
 
 
-def book_review_edit(request, slug):
-    book = Book.objects.filter(slug=slug).get()
-    review = Review.objects.filter(book__slug=slug).get()
-
-    if request.method == "GET":
-        form = BookReviewEditForm(initial={"book": review.book, 'content': review.content}, instance=review)
-    else:
-        form = BookReviewEditForm(request.POST, initial={"book": review.book, 'content': review.content}, instance=review)
-        if form.is_valid():
-            form.save()
-            return redirect('index')
-
-    context = {
-        'form': form,
-        'slug': slug,
-        'review': review,
-        'book': book,
-    }
-    return render(request, 'books/review-book-page.html', context)
+# def book_review_edit(request, slug):
+#     book = Book.objects.filter(slug=slug).get()
+#     review = Review.objects.filter(book__slug=slug).first()
+#     if review:
+#         print('has review')
+#
+#     if request.method == "GET":
+#         form = BookReviewEditForm(initial={"book": review.book, 'content': review.content}, instance=review)
+#     else:
+#         form = BookReviewEditForm(request.POST, initial={"book": review.book, 'content': review.content}, instance=review)
+#         if form.is_valid():
+#             form.save()
+#             return redirect('index')
+#     has_review = True
+#     context = {
+#         'form': form,
+#         'slug': slug,
+#         'review': review,
+#         'book': book,
+#         'has_review': has_review
+#     }
+#     print(has_review)
+#     return render(request, 'books/review-book-page.html', context)
 
