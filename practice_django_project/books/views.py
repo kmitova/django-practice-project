@@ -59,6 +59,7 @@ def search_view(request):
 # TODO: style details page, add to read or review btn
 #  (to read if not read, review if finished, complete if started, start if tbr'd)
 
+
 def book_details(request, slug):
     book = Book.objects.get(slug=slug)
     context = {
@@ -83,11 +84,13 @@ def book_review_create(request, slug):
     context = {
         'form': form,
         'slug': slug,
+        'book': book,
     }
     return render(request, 'books/review-book-page.html', context)
 
 
 def book_review_edit(request, slug):
+    book = Book.objects.filter(slug=slug).get()
     review = Review.objects.filter(book__slug=slug).get()
 
     if request.method == "GET":
@@ -102,6 +105,7 @@ def book_review_edit(request, slug):
         'form': form,
         'slug': slug,
         'review': review,
+        'book': book,
     }
     return render(request, 'books/review-book-page.html', context)
 

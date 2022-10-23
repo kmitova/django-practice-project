@@ -3,24 +3,18 @@ from django import forms
 from practice_django_project.books.models import Review
 
 
-class BookReviewCreateForm(forms.ModelForm):
+class BaseReviewForm(forms.ModelForm):
     class Meta:
         model = Review
         fields = ('book', 'rating', 'content',)
-        # widgets = {
-        #     'book': forms.TextInput(
-        #         attrs={
-        #             'readonly': 'readonly',
-        #         }
-        #     ),}
+        widgets = {
+            'book': forms.HiddenInput()
+        }
 
-class BookReviewEditForm(forms.ModelForm):
-    class Meta:
-        model = Review
-        fields = ('book', 'rating', 'content',)
-        # widgets = {
-        #     'book': forms.TextInput(
-        #         attrs={
-        #             'readonly': 'readonly',
-        #         }
-        #     ),}
+
+class BookReviewCreateForm(BaseReviewForm):
+    pass
+
+
+class BookReviewEditForm(BaseReviewForm):
+    pass

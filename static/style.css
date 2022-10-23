@@ -180,6 +180,10 @@ button {
   cursor: pointer;
 }
 
+.btn a {
+  color: white;
+}
+
 .close-icon, .hamburger-icon {
   display: none;
 }

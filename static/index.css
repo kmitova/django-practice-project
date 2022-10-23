@@ -48,7 +48,6 @@ header {
 }
 
 .menu {
-  display: block;
   display: flex;
   align-items: center;
     justify-content:flex-start;
@@ -100,8 +99,6 @@ main {
 }
 
 footer {
-  padding: 1em;
-
   display: flex;
   align-items: center;
   justify-content: space-evenly;
@@ -176,6 +173,9 @@ footer {
   background-color: #006494;
 }
 
+.btn a {
+  color: white;
+}
 button {
   cursor: pointer;
 }

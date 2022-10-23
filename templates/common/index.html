@@ -21,7 +21,7 @@
             <li class="book-item">
               {% include 'partials/book-item.html' %}
 
-              <a class="finish-btn" href="{% url 'finish book' book.pk %}">Finish</a>
+              <a class="finish-btn btn" href="{% url 'finish book' book.pk %}">Finish</a>
             </li>
               {% endfor %}
           </ul>
@@ -35,7 +35,7 @@
             <!-- link to the book -->
             <li class="book-item">
               {% include 'partials/book-item.html' %}
-            <a class="start-btn" href="{% url 'start book' book.pk %}">Start</a>
+            <a class="start-btn btn" href="{% url 'start book' book.pk %}">Start</a>
 
             </li>
               {% endfor %}
@@ -54,9 +54,9 @@
 {#              >#}
                 {% include 'partials/book-item.html' %}
                 {% if review %}
-                    <a class="review-btn" href="{% url 'book review edit' slug=book.slug %}">Edit Review</a>
+                    <a class="review-btn btn" href="{% url 'book review edit' slug=book.slug %}">Edit Review</a>
                 {% else %}
-                    <a class="review-btn" href="{% url 'book review create' slug=book.slug %}">Review</a>
+                    <a class="review-btn btn" href="{% url 'book review create' slug=book.slug %}">Review</a>
                 {% endif %}
             </li>
 
