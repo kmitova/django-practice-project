@@ -14,8 +14,9 @@ def add_book_to_tbr(request, pk):
     #     'random_book': book
     # }
     # return render(request, 'books/show-books-page.html', context)
-    return render(request, 'common/index.html')
 
+    # return render(request, 'common/index.html')
+    return redirect('index')
 
 def show_random_book(request):
     random_book = get_random_book_object()

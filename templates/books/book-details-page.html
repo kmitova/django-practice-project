@@ -22,7 +22,8 @@
         <div class="details-right">
             <div class="book-status">
         {% if book.status == 'CR' %}
-                <a class="finish-btn btn" href="{% url 'finish book' book.pk %}">Finish</a>
+            {% elif book.status == "NR"%}
+            <a class="finish-btn" href="{% url 'add book to tbr' book.pk %}">Add to TBR</a>
             {% elif book.status == 'TR'%}
                 <a class="start-btn btn" href="{% url 'start book' book.pk %}">Start</a>
             {% elif book.status == 'FN'%}

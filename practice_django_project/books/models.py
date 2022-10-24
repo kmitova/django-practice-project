@@ -123,7 +123,6 @@ class Review(StrFromFieldsMixin, models.Model):
     ]
 
     book = models.ForeignKey(
-        # TODO: filter by finished book in the views file later so that only finished books can be reviewed
         Book, on_delete=models.RESTRICT, blank=False, null=False
     )
 
